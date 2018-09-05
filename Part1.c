@@ -6,7 +6,7 @@ typedef struct{
 char name[60], curso[20], cpf[14], rg[20], adress[200], hora_entrada[5], hora_saida[5], phone[12];
 int id; //id - matricula
 } aluno;
-int op, x, op2, i_op2;     
+int op, x, op2, i_op2;     //i_op2 é a variavel que salva a alteração do cadastro??
                         //\a - apito(efeito sonoro)
 aluno estagiario[10];
 
@@ -14,10 +14,10 @@ void main(void){
 	
 	int indice = 0;
 	
-	printf("\t\t\tStartup ****\n");
+	printf("\t\t\tStartup Shit\n");
 	printf("\t\tBem Vindo ao Sistema da Startup\n");
 	do{
-	printf("1-Create\n2-Read\n3-Update\n4-Delete\n5-Exit\n");             //Esses nomes podem ser trocados por: Cadastro, Visão Geral, Atualização\Recadastro e Apagar Cadastro.
+	printf("1-Create\n2-Read\n3-Update\n4-Delete\n5-Exit\n");	//Esses nomes podem ser trocados por: Cadastro, Visão Geral, Atualização\Recadastro e Apagar Cadastro.
 	printf("Digite sua opcao:\n");
 	scanf("%i", &op);
 	switch(op){
@@ -40,7 +40,7 @@ void main(void){
 				printf("Hora de Entrada:\n");
 				fflush(stdin);
 				gets(estagiario[indice].hora_entrada);
-				printf("Hora de Saida:\n");
+				printf("Hora de Saída:\n");
 				fflush(stdin);
 				gets(estagiario[indice].hora_saida);
 				printf("Celular:\n");
@@ -78,7 +78,7 @@ void main(void){
 				scanf("%i", &op2);
 				for(x=0;x<indice;x++){
 				if(estagiario[x].id==op2){
-					i_op2=x;
+					i_op2=x;         //i_op2 é a variavel que salva a alteração do cadastro??
 							break;}
 							}
 				printf("Nome:\n");
@@ -99,7 +99,7 @@ void main(void){
 				printf("Hora de Entrada:\n");
 				fflush(stdin);
 				gets(estagiario[i_op2].hora_entrada);
-				printf("Hora de Saida:\n");
+				printf("Hora de Saída:\n");
 				fflush(stdin);
 				gets(estagiario[i_op2].hora_saida);
 				printf("Celular:\n");
