@@ -14,10 +14,11 @@ void main(void){
 	
 	int indice = 0;
 	
-	printf("\t\t\tStartup Shit\n");
+	printf("\t\t\tStartup ****\n");
+	printf("\t\tBem Vindo ao Sistema da Startup\n");
 	do{
-	printf("1-Create\n2-Read\n3-Update\n4-Delete\n5-Exit\n");
-	printf("Digite sua opção:\n");
+	printf("1-Create\n2-Read\n3-Update\n4-Delete\n5-Exit\n");             //Esses nomes podem ser trocados por: Cadastro, Visão Geral, Atualização\Recadastro e Apagar Cadastro.
+	printf("Digite sua opcao:\n");
 	scanf("%i", &op);
 	switch(op){
 		case 1: printf("\n\t\tCADASTRO\n");
@@ -39,7 +40,7 @@ void main(void){
 				printf("Hora de Entrada:\n");
 				fflush(stdin);
 				gets(estagiario[indice].hora_entrada);
-				printf("Hora de Saída:\n");
+				printf("Hora de Saida:\n");
 				fflush(stdin);
 				gets(estagiario[indice].hora_saida);
 				printf("Celular:\n");
@@ -98,7 +99,7 @@ void main(void){
 				printf("Hora de Entrada:\n");
 				fflush(stdin);
 				gets(estagiario[i_op2].hora_entrada);
-				printf("Hora de Saída:\n");
+				printf("Hora de Saida:\n");
 				fflush(stdin);
 				gets(estagiario[i_op2].hora_saida);
 				printf("Celular:\n");
