@@ -25,13 +25,11 @@ def read_all(matricula):
           print("Hora de Entrada: {}".format(i['hora_entrada']))
           print("Hora de Saida: {}".format(i['hora_saida']))
           print("Celular: {}".format(i['celular']))
-
       
 def read_2():
   for i in estagiarios:
       print("Nome: {}".format(i['nome']))
       print("Matricula: {}".format(i['matricula']))
-
 
 def read_3(matricula):
   for i in estagiarios:
@@ -45,6 +43,17 @@ def read_3(matricula):
       i['hora_saida'] = input("Hora de Saída:\n")
       i['celular'] = input("Celular:\n")
 
+def estag_del(matricula):
+  for i in estagiarios:
+    if i['matricula']==matricula:
+      del i['nome']
+      del i['cpf']
+      del i['curso']
+      del i['rg']
+      del i['endereco']
+      del i['hora_entrada']
+      del i['hora_saida']
+      del i['celular']
 
 print ("\t\t\tTrainee TEC\n")
 op = 0
@@ -66,7 +75,7 @@ while (op != 5):
       matricula = input("Matricula:\n")
       create (nome, cpf, curso, rg, endereco, hora_entrada, hora_saida, celular, matricula)
   if op==2:
-      print ("\n\t\tEstagiarios Cadastrados\n")
+      print ("\n\t\tESTAGIARIOS CADASTRADOS\n")
       read_2()
       matricula = input("Digite a matricula desejada:\n")
       read_all(matricula)
@@ -75,3 +84,7 @@ while (op != 5):
       print("\n\tATUALIZAÇÃO DO CADASTRO\n")
       matricula = input("Digite a matricula desejada:\n")
       read_3(matricula)
+  if op==4:
+    print("\n\t\tEXCLUSÃO DE ESTAGIARIOS\n")
+    matricula = input("Digite a matricula desejada:")
+    estag_del(matricula)
