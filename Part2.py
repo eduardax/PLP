@@ -43,18 +43,6 @@ def read_3(matricula):
       i['hora_saida'] = input("Hora de Saída:\n")
       i['celular'] = input("Celular:\n")
 
-def estag_del(matricula):
-  for i in estagiarios:
-    if i['matricula']==matricula:
-      del i['nome']
-      del i['cpf']
-      del i['curso']
-      del i['rg']
-      del i['endereco']
-      del i['hora_entrada']
-      del i['hora_saida']
-      del i['celular']
-
 print ("\t\t\tTrainee TEC\n")
 op = 0
 while (op != 5):
@@ -84,7 +72,10 @@ while (op != 5):
       print("\n\tATUALIZAÇÃO DO CADASTRO\n")
       matricula = input("Digite a matricula desejada:\n")
       read_3(matricula)
+      print("\n\t\tCADASTRO ATUALIZADO \n")
+      read_all(matricula)
+      print("\n")
   if op==4:
     print("\n\t\tEXCLUSÃO DE ESTAGIARIOS\n")
     matricula = input("Digite a matricula desejada:")
-    estag_del(matricula)
+    estagiarios.pop()
