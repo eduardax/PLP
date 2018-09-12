@@ -1,17 +1,18 @@
-estagiarios = []
+import os
+PATH = 'estagiarios/'
 
-def create(name, cpf, curso, rg, endereco, hora_entrada, hora_saida, celular, matricula):
-    estagiarios.append({  #adiciona um coisa dentro do vetor matricula
-        'nome' : nome,
-        'cpf' : cpf,
-        'curso' : curso,
-        'rg' : rg,
-        'endereco' : endereco,
-        'hora_entrada':hora_entrada,
-        'hora_saida':hora_saida,
-        'celular':celular,
-        'matricula' : matricula,
-    })
+def create(nome, cpf, curso, rg, endereco, hora_entrada, hora_saida, celular, matricula):
+  matricula=open(PATH+matricula+'.txt', 'w', encoding="utf8" )
+  matricula.write('Nome: {}'.format(nome))
+  matricula.write("Matricula: {}".format(matricula))
+  matricula.write("CPF: {}".format(cpf))
+  matricula.write("Curso: {}".format(curso))
+  matricula.write("RG: {}".format(rg))
+  matricula.write("Endereco: {}".format(endereco))
+  matricula.write("Hora de Entrada: {}".format(hora_entrada))
+  matricula.write("Hora de Saida: {}".format(hora_saida))
+  matricula.write("Celular: {}".format(celular))
+  matricula.close()
 
 def read_all(matricula):
     for i in estagiarios:
@@ -25,7 +26,7 @@ def read_all(matricula):
           print("Hora de Entrada: {}".format(i['hora_entrada']))
           print("Hora de Saida: {}".format(i['hora_saida']))
           print("Celular: {}".format(i['celular']))
-      
+
 def read_2():
   for i in estagiarios:
       print("Nome: {}".format(i['nome']))
@@ -42,6 +43,11 @@ def read_3(matricula):
       i['hora_entrada'] = input("Hora de Entrada:\n")
       i['hora_saida'] = input("Hora de Saída:\n")
       i['celular'] = input("Celular:\n")
+
+def estag_del(matricula):
+  for pos, i in enumerate(estagiarios):
+    if i['matricula']==matricula:
+      estagiarios.pop(pos)
 
 print ("\t\t\tTrainee TEC\n")
 op = 0
@@ -78,4 +84,4 @@ while (op != 5):
   if op==4:
     print("\n\t\tEXCLUSÃO DE ESTAGIARIOS\n")
     matricula = input("Digite a matricula desejada:")
-    estagiarios.pop()
+    estag_del(matricula)
